@@ -36,9 +36,33 @@ body {
 }
 
 .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.brand-name {
     font-size: 1.5rem;
     font-weight: 700;
     color: #2563eb;
+    line-height: 1;
+}
+
+.brand-tagline {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: 500;
+    line-height: 1;
 }
 
 .nav-menu {
@@ -90,7 +114,7 @@ body {
 .hero-title {
     font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
@@ -98,6 +122,15 @@ body {
     display: block;
     color: #fbbf24;
     margin-top: 0.5rem;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero-description {
@@ -130,12 +163,12 @@ body {
 }
 
 .btn-primary {
-    background: #fbbf24;
-    color: #1f2937;
+    background: #25D366;
+    color: white;
 }
 
 .btn-primary:hover {
-    background: #f59e0b;
+    background: #128C7E;
     transform: translateY(-2px);
 }
 
@@ -290,18 +323,35 @@ section {
     background: #f8fafc;
 }
 
-.pricing-table {
+.pricing-categories {
+    display: grid;
+    gap: 3rem;
+}
+
+.pricing-category {
     background: white;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
+}
+
+.category-title {
+    background: #2563eb;
+    color: white;
+    padding: 1.5rem;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pricing-table {
+    background: white;
 }
 
 .pricing-header {
-    background: #2563eb;
-    color: white;
+    background: #e0e7ff;
+    color: #1e40af;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     font-weight: 600;
@@ -322,31 +372,20 @@ section {
     text-align: center;
 }
 
-.pricing-note {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    background: #fef3c7;
-    border-radius: 10px;
-    color: #92400e;
-}
-
 /* Service Areas Section */
 .areas-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 3rem;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-.current-areas,
-.expansion-plans {
+.current-areas {
     text-align: center;
 }
 
-.current-areas h3,
-.expansion-plans h3 {
+.current-areas h3 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -367,11 +406,6 @@ section {
     font-weight: 500;
 }
 
-.coming-soon {
-    opacity: 0.6;
-    background: #f3f4f6;
-}
-
 /* Contact Section */
 .contact {
     background: #1f2937;
@@ -384,15 +418,20 @@ section {
 }
 
 .contact-content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 2rem;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
@@ -412,6 +451,40 @@ section {
 
 .contact-item p {
     opacity: 0.9;
+}
+
+/* Terms & Conditions Section */
+.terms {
+    background: #f8fafc;
+}
+
+.terms-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terms-list {
+    list-style: none;
+    padding: 0;
+}
+
+.terms-list li {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-left: 3rem;
+}
+
+.terms-list li::before {
+    content: "•";
+    position: absolute;
+    left: 1.5rem;
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 /* Footer */
@@ -502,10 +575,6 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .areas-content {
-        grid-template-columns: 1fr;
-    }
-
     .pricing-header,
     .pricing-row {
         grid-template-columns: 1fr;
@@ -515,6 +584,10 @@ section {
     .pricing-col {
         padding: 0.75rem 1rem;
         border-bottom: 1px solid #e5e7eb;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
     }
 
     .footer-content {

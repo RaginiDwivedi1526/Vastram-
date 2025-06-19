@@ -112,20 +112,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add click handlers for CTA buttons
-document.addEventListener('DOMContentLoaded', () => {
-    // Book Now button in hero
-    const bookNowButtons = document.querySelectorAll('.btn-primary');
-    bookNowButtons.forEach(button => {
-        if (button.textContent.includes('Book Now')) {
-            button.addEventListener('click', () => {
-                // You can replace this with actual booking functionality
-                alert('Thank you for your interest! Please call +91-XXXXX-XXXXX to book our services.');
-            });
-        }
-    });
-});
-
 // Add hover effects for service cards
 document.addEventListener('DOMContentLoaded', () => {
     const serviceCards = document.querySelectorAll('.service-card');
@@ -172,4 +158,5 @@ function addButtonLoading(button) {
 
 // Console log to show the website is loaded
 console.log('🧺 VASTRAM Website Loaded Successfully!');
-console.log('Premium Dry Cleaning & Laundry Services');
+console.log('We want you shine - Premium Dry Cleaning & Laundry Services');
+console.log('Contact: +91 99119 91591 | vastramdryclean@gmail.com');
